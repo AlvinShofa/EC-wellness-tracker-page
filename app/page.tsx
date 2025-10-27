@@ -4,17 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Heart, MessageCircle, TrendingUp, Sparkles, RefreshCw, Plus } from 'lucide-react';
 import InputPage from './InputPage';
-
-// Pesan motivasi
-const motivationalMessages = [
-  "Setiap langkah kecil adalah kemajuan yang berarti 🖤",
-  "Kamu sudah melakukan yang terbaik hari ini",
-  "Healing adalah perjalanan, bukan tujuan akhir",
-  "Be proud of how far you've come 🌱",
-  "Kamu lebih kuat dari yang kamu kira",
-  "Take it one day at a time, you're doing great",
-  "Your mental health matters, and so do you"
-];
+import { motivationalMessages, initialMoodData, initialSessions } from './data';
 
 export default function WellnessDashboard() {
   const [currentPage, setCurrentPage] = useState('dashboard');
@@ -24,21 +14,9 @@ export default function WellnessDashboard() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   
   // State untuk data
-  const [moodData, setMoodData] = useState([
-    { day: 'Sen', mood: 6.5, date: '2025-10-21' },
-    { day: 'Sel', mood: 7.2, date: '2025-10-22' },
-    { day: 'Rab', mood: 6.8, date: '2025-10-23' },
-    { day: 'Kam', mood: 7.5, date: '2025-10-24' },
-    { day: 'Jum', mood: 8.0, date: '2025-10-25' },
-    { day: 'Sab', mood: 7.8, date: '2025-10-26' },
-    { day: 'Min', mood: 8.2, date: '2025-10-27' }
-  ]);
+  const [moodData, setMoodData] = useState(initialMoodData);
 
-  const [sessions, setSessions] = useState([
-    { id: 1, date: '2025-10-20', duration: 45, notes: 'Sesi pertama, membahas anxiety' },
-    { id: 2, date: '2025-10-22', duration: 50, notes: 'Follow up, progress baik' },
-    { id: 3, date: '2025-10-25', duration: 40, notes: 'Teknik coping baru' }
-  ]);
+  const [sessions, setSessions] = useState(initialSessions);
 
   const [stats, setStats] = useState({
     totalSessions: 0,
