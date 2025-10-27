@@ -1,283 +1,213 @@
-# WELLNESS TRACKER DASHBOARD
-**EmergencyyCall - Mental Health Companion**
+# Wellness Tracker Dashboard
+
+Dashboard tracking kesehatan mental untuk **EmergencyyCall** - Your Mental Health Companion 🖤
 
 ---
 
-## INFORMASI PROJECT
+## 📋 Deskripsi Proyek
 
-**Link Deployment:** [MASUKKAN LINK DEPLOY DI SINI]  
-**Framework:** Next.js 16 + React 19 + TypeScript  
-**Waktu Pengerjaan:** 1 Hari  
-**Repository:** [Link GitHub jika ada]
+Wellness Tracker Dashboard adalah aplikasi web interaktif yang dirancang untuk membantu pengguna memantau kesehatan mental mereka melalui visualisasi data mood harian, pencatatan sesi konseling, dan pesan motivasi yang mendukung proses healing. Aplikasi ini menyediakan antarmuka yang user-friendly dan estetik untuk mencatat perjalanan kesehatan mental pengguna.
 
 ---
 
-## 1. DESKRIPSI PROJECT
+## 🛠️ Framework & Tools yang Digunakan
 
-Wellness Tracker Dashboard adalah halaman baru EmergencyyCall yang memungkinkan pengguna memantau aktivitas kesehatan mental mereka, termasuk frekuensi konseling, perubahan mood, dan pesan motivasi dari sistem.
+### **Core Framework**
+- **[Next.js 16.0.0](https://nextjs.org)** - React framework dengan App Router untuk aplikasi web modern
+- **[React 19.2.0](https://react.dev)** - Library JavaScript untuk membangun user interface yang interaktif
+- **[TypeScript 5](https://www.typescriptlang.org)** - Superset JavaScript dengan type safety untuk kode yang lebih robust
 
-**Screenshot Dashboard Utama:**
-![Dashboard](gambar/dashboard.png)
-*[GAMBAR 1: Screenshot halaman utama menampilkan 3 cards statistik dan mood chart]*
+### **UI & Styling**
+- **[Tailwind CSS 4](https://tailwindcss.com)** - Utility-first CSS framework untuk styling yang cepat dan konsisten
+- **[Lucide React 0.548.0](https://lucide.dev)** - Icon library modern dengan koleksi icon yang lengkap dan customizable
 
----
+### **Data Visualization**
+- **[Recharts 3.3.0](https://recharts.org)** - Library charting berbasis React untuk visualisasi data mood tracking yang interaktif dan responsif
 
-## 2. FITUR UTAMA (3 Komponen Wajib)
-
-### 2.1 Ringkasan Sesi Konseling
-Menampilkan:
-- **Total Sesi Konseling** - Jumlah sesi yang telah dilakukan
-- **Durasi Rata-rata** - Rata-rata durasi per sesi (dalam menit)
-- **Mood Terkini** - Nilai mood terakhir (skala 0-10)
-
-**Screenshot:**
-![Statistik Cards](gambar/stats-cards.png)
-*[GAMBAR 2: 3 cards dengan icon dan data statistik]*
+### **Development Tools**
+- **ESLint 9** - Linter untuk menjaga kualitas dan konsistensi kode
+- **PostCSS** - Tool untuk transformasi CSS dengan Tailwind CSS
 
 ---
 
-### 2.2 Grafik Perubahan Mood
-Line chart interaktif menampilkan tracking mood 7 hari terakhir dengan:
-- Skala 0-10
-- Tooltip saat hover
-- Data dinamis dari dummy data
-- Responsive di semua device
+## 🎨 Alasan Pemilihan Design & Struktur
 
-**Screenshot:**
-![Mood Chart](gambar/mood-chart.png)
-*[GAMBAR 3: Line chart dengan 7 hari data mood]*
+### **1. Pemilihan Next.js sebagai Framework Utama**
 
----
+**Alasan:**
+- **Server-Side Rendering (SSR) & Static Generation**: Next.js mendukung berbagai rendering strategy yang memungkinkan performa optimal dan SEO yang baik untuk masa depan
+- **App Router**: Menggunakan struktur folder berbasis rute yang intuitif dan mudah di-maintain
+- **Built-in Optimization**: Automatic code splitting, image optimization, dan font optimization out-of-the-box
+- **Developer Experience**: Hot reload yang cepat dan TypeScript support yang excellent
+- **Scalability**: Mudah untuk scale aplikasi ketika fitur bertambah
 
-### 2.3 Pesan Motivasi Harian
-Card pesan motivasi yang:
-- Muncul secara random dari 7 pesan berbeda
-- Dapat di-refresh dengan tombol
-- Desain gradient yang menenangkan
-- Animasi smooth transition
+### **2. Arsitektur Komponen Modular**
 
-**Contoh Pesan:**
-- "Setiap langkah kecil adalah kemajuan yang berarti 🖤"
-- "Kamu lebih kuat dari yang kamu kira"
-- "Take it one day at a time, you're doing great"
-
-**Screenshot:**
-![Pesan Motivasi](gambar/motivasi.png)
-*[GAMBAR 4: Card pesan motivasi dengan background gradient]*
-
----
-
-## 3. TEKNOLOGI & ALASAN PEMILIHAN
-
-### Framework & Tools
-| Teknologi | Alasan Pemilihan |
-|-----------|------------------|
-| **Next.js 16** | SSR untuk performa cepat, App Router untuk struktur clean, built-in optimization |
-| **React 19** | Component-based untuk reusability, hooks untuk state management yang simple |
-| **TypeScript** | Type safety mengurangi bugs, kode lebih maintainable |
-| **Tailwind CSS 4** | Utility-first untuk development cepat, design system konsisten, ringan di production |
-| **Recharts** | Library chart React yang ringan, interactive, mudah di-customize |
-| **Lucide React** | Icon modern dan customizable, tree-shakeable untuk bundle kecil |
-
-### Alasan Desain & Struktur
-
-**1. Pemilihan Next.js:**
-- Ringan dan cepat diakses (SSR + Static Generation)
-- Mobile-first responsive
-- Siap untuk integrasi backend di tahap selanjutnya
-- Deployment mudah ke Vercel
-
-**2. Struktur Komponen Modular:**
-- `page.tsx` - Dashboard utama
-- `InputPage.tsx` - Form input data
-- `data.ts` - Dummy data terpisah (mudah diganti dengan API)
-- Komponen kecil dan reusable
-
-**3. State Management Sederhana:**
-- React Hooks untuk local state
-- Tidak butuh Redux/Zustand untuk skala saat ini
-- Mudah scale up jika diperlukan
-
----
-
-## 4. PENDEKATAN UX & DESIGN
-
-### Warna Lembut & Menenangkan
-- **Primary:** Red-900 (#7f1d1d) - Hangat dan fokus
-- **Background:** Gradient Gray (50-200) - Lembut dan tidak silau
-- **Accent:** Gradient Red-900 to Gray-900 - Modern dan calming
-
-**Screenshot:**
-![Color Palette](gambar/colors.png)
-*[GAMBAR 5: Palet warna yang digunakan]*
-
-### Navigasi Intuitif
-- Toggle sederhana antara Dashboard dan Input Data
-- Tombol jelas dengan icon yang recognizable
-- Breadcrumb untuk user orientation
-
-### Responsivitas
-- Mobile-first approach
-- Breakpoints untuk tablet dan desktop
-- Touch-friendly button sizes
-
-**Screenshot:**
-![Mobile View](gambar/mobile.png)
-*[GAMBAR 6: Tampilan responsive di mobile]*
-
----
-
-## 5. INTERAKSI & ANIMASI
-
-### Hover Effects
-- Cards terangkat dengan shadow saat hover
-- Button dengan color transition
-- Chart tooltip muncul smooth
-
-### Transisi Lembut
-- Fade in/out untuk notifications
-- Smooth page transitions
-- Loading state dengan spin animation
-
-### Notifikasi
-- Toast notification saat data berhasil disimpan
-- Slide-in animation dari kanan
-- Auto-dismiss setelah 3 detik
-
-**Screenshot:**
-![Notification](gambar/notification.png)
-*[GAMBAR 7: Toast notification sukses]*
-
----
-
-## 6. CARA PENGGUNAAN
-
-### Akses Dashboard
-1. Buka link: **[LINK DEPLOY]**
-2. Dashboard langsung menampilkan statistik dan chart
-3. Lihat pesan motivasi di bagian bawah
-
-### Input Data Mood/Sesi
-1. Klik tombol **"Input Data"** di header
-2. Pilih tab "Mood" atau "Sesi Konseling"
-3. Isi form dan klik **"Simpan"**
-4. Kembali ke dashboard untuk lihat update
-
-### Refresh Pesan Motivasi
-1. Klik tombol **"Perbarui"** (icon refresh) di header
-2. Pesan akan berganti random
-
-**Screenshot:**
-![Input Page](gambar/input-page.png)
-*[GAMBAR 8: Halaman input data dengan form]*
-
----
-
-## 7. RENCANA INTEGRASI BACKEND
-
-### API yang Dibutuhkan
+**Struktur Folder:**
 ```
-Authentication:
-- POST /api/auth/login
-- GET /api/auth/me
-
-Mood:
-- GET /api/moods
-- POST /api/moods
-
-Sessions:
-- GET /api/sessions  
-- POST /api/sessions
+app/
+├── page.tsx           # Main dashboard component
+├── InputPage.tsx      # Form input untuk sesi & mood
+├── data.ts            # Data dummy terpisah (easy to replace with API)
+├── layout.tsx         # Root layout
+└── globals.css        # Global styles
 ```
 
-### Langkah Integrasi
-1. **Buat API Service** (`app/services/api.ts`)
-2. **Replace Dummy Data** dengan fetch dari API
-3. **Tambah Authentication** (JWT token)
-4. **Error Handling** untuk API failures
+**Alasan:**
+- **Separation of Concerns**: Komponen dashboard dan input dipisah untuk maintainability
+- **Data Abstraction**: Data dummy di file terpisah (`data.ts`) memudahkan transisi ke API backend
+- **Component Reusability**: Setiap komponen memiliki tanggung jawab yang jelas dan dapat digunakan kembali
+- **Easy Testing**: Struktur modular memudahkan unit testing per komponen
 
-### Data Structure
-Dummy data saat ini di `data.ts` sudah match dengan struktur database yang direncanakan, sehingga tinggal replace dengan API calls.
+### **3. State Management dengan React Hooks**
+
+**Alasan:**
+- **Simplicity**: Menggunakan `useState` dan `useEffect` untuk state lokal yang cukup untuk skala aplikasi saat ini
+- **No Extra Dependencies**: Tidak perlu library tambahan seperti Redux untuk state management
+- **Easy to Upgrade**: Mudah untuk migrate ke state management library (Zustand, Redux) jika diperlukan di masa depan
+- **Performance**: React hooks sudah cukup efisien untuk aplikasi ukuran medium
+
+### **4. Design System dengan Tailwind CSS**
+
+**Alasan:**
+- **Rapid Development**: Utility classes memungkinkan styling cepat tanpa menulis CSS custom
+- **Consistency**: Warna, spacing, dan typography yang konsisten menggunakan design tokens
+- **Responsive Design**: Mobile-first approach dengan responsive utilities yang mudah
+- **Dark Theme Ready**: Mudah untuk implement dark mode di masa depan
+- **Small Bundle Size**: Purge unused CSS secara otomatis di production
+
+### **5. Skema Warna & User Experience**
+
+**Palet Warna:**
+- **Primary**: Red-900 (#7f1d1d) - Merepresentasikan keseriusan dan fokus pada mental health
+- **Secondary**: Gray tones - Memberikan kesan profesional dan menenangkan
+- **Accent**: Gradient dari red ke gray - Modern dan eye-catching
+
+**UX Principles:**
+- **Minimalist Interface**: Fokus pada data yang penting tanpa overwhelm user
+- **Visual Feedback**: Notifikasi, hover effects, dan animations untuk interaksi yang clear
+- **Motivational Messages**: Memberikan dukungan emosional melalui pesan harian
+- **Progressive Disclosure**: Form dan detail data ditampilkan saat diperlukan
 
 ---
 
-## 8. INSTALASI LOKAL
+## 🔗 Rencana Integrasi dengan Backend
+
+### **Teknologi Backend yang Direkomendasikan**
+- **Framework**: Node.js dengan Express.js atau NestJS
+- **Database**: PostgreSQL atau MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
+- **API Style**: RESTful API
+
+### **Database yang Dibutuhkan**
+Aplikasi membutuhkan 3 tabel utama:
+- **Users** - Data pengguna (id, email, name, password)
+- **Moods** - Data mood tracking (id, user_id, mood_score, date, note)
+- **Sessions** - Data sesi konseling (id, user_id, date, duration, notes)
+
+### **API Endpoints yang Dibutuhkan**
+
+**Authentication:**
+- `POST /api/auth/register` - Registrasi user baru
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/me` - Get user info
+
+**Mood Tracking:**
+- `GET /api/moods` - Get semua data mood
+- `POST /api/moods` - Tambah mood baru
+- `DELETE /api/moods/:id` - Hapus mood
+
+**Counseling Sessions:**
+- `GET /api/sessions` - Get semua sesi konseling
+- `POST /api/sessions` - Tambah sesi baru
+- `DELETE /api/sessions/:id` - Hapus sesi
+
+### **Langkah Integrasi di Frontend**
+
+1. **Buat API Service Layer**
+   - Buat file `app/services/api.ts` untuk handle semua API calls
+   - Setup base URL dengan environment variable
+
+2. **Replace Dummy Data**
+   - Ganti import dari `data.ts` dengan API calls
+   - Tambahkan `useEffect` untuk fetch data saat component mount
+
+3. **Tambahkan Authentication**
+   - Buat login/register page
+   - Simpan JWT token di localStorage
+   - Protect routes yang membutuhkan authentication
+
+4. **Error Handling**
+   - Tambahkan loading states saat fetch data
+   - Tampilkan error message jika API call gagal
+   - Implement retry logic untuk network errors
+
+---
+
+## 🚀 Cara Menjalankan Proyek
+
+### **Instalasi Dependencies**
 
 ```bash
-# Clone & Install
-git clone [repo-url]
-cd wellness-tracker-dashboard
 npm install
+# atau
+yarn install
+```
 
-# Run Development
+### **Menjalankan Development Server**
+
+```bash
 npm run dev
-# Buka http://localhost:3000
+# atau
+yarn dev
+```
 
-# Build Production
+Buka [http://localhost:3000](http://localhost:3000) di browser untuk melihat aplikasi.
+
+### **Build untuk Production**
+
+```bash
 npm run build
 npm start
 ```
 
 ---
 
-## 9. CHECKLIST DELIVERABLES
+## 📁 Struktur Project
 
-- [x] Prototipe web dashboard sederhana
-- [x] 3 komponen utama (ringkasan sesi, grafik mood, pesan motivasi)
-- [x] UX mindful dengan warna lembut
-- [x] Navigasi intuitif
-- [x] Responsive di berbagai ukuran layar
-- [x] Hover effects
-- [x] Transisi lembut antar elemen
-- [x] Notifikasi ketika data diperbarui
-- [x] Dokumentasi README
-- [x] Framework & tools dijelaskan
-- [x] Alasan pemilihan desain
-- [x] Rencana integrasi backend
-- [ ] Link deploy (isi setelah deploy)
-- [ ] Screenshot (lampirkan 8 gambar di atas)
-
----
-
-## 10. KESIMPULAN
-
-Wellness Tracker Dashboard berhasil memenuhi semua requirement studi kasus:
-
-✅ **Ringan & Cepat** - Next.js dengan SSR dan optimization  
-✅ **Data Dinamis** - State management dengan React Hooks  
-✅ **Identitas Visual** - Warna hangat (red-900) dan tenang (gray tones)  
-✅ **Siap Integrasi** - Struktur modular dengan data layer terpisah  
-✅ **UX Mindful** - Desain minimalis, warna lembut, navigasi intuitif  
-✅ **Interaktif** - Hover, transisi, notifikasi  
-
-Dashboard ini siap digunakan sebagai prototype dan mudah dikembangkan dengan backend di tahap selanjutnya.
+```
+wellness-tracker-dashboard/
+├── app/
+│   ├── page.tsx          # Main dashboard page
+│   ├── InputPage.tsx     # Input form component
+│   ├── data.ts           # Dummy data (akan diganti dengan API)
+│   ├── layout.tsx        # Root layout
+│   └── globals.css       # Global styles
+├── public/               # Static assets
+├── package.json          # Project dependencies
+├── tsconfig.json         # TypeScript configuration
+├── tailwind.config.js    # Tailwind configuration
+└── README.md            # Dokumentasi ini
+```
 
 ---
 
-## LAMPIRAN: DAFTAR SCREENSHOT
+## 📝 Next Steps
 
-**Desktop View:**
-1. Dashboard utama (full page)
-2. 3 cards statistik (close-up)
-3. Mood chart dengan data
-4. Card pesan motivasi
-5. Color palette / style guide
-6. Mobile responsive view
-7. Toast notification
-8. Halaman input data
+**Backend:**
+- [ ] Setup server dan database
+- [ ] Buat API endpoints sesuai spesifikasi di atas
+- [ ] Implement authentication dengan JWT
+- [ ] Deploy backend ke cloud
 
-**Tips Screenshot:**
-- Resolution: 1920x1080 atau lebih
-- Browser: Chrome/Edge dengan zoom 100%
-- Ambil dalam kondisi terang (tidak dark mode)
-- Crop dengan padding yang cukup
+**Frontend:**
+- [ ] Buat API service layer (`app/services/api.ts`)
+- [ ] Replace dummy data dengan API calls
+- [ ] Tambahkan authentication flow
+- [ ] Testing integrasi dengan backend
 
 ---
 
-**Dibuat oleh:** [Nama Kandidat]  
-**Tanggal:** [Tanggal Pengumpulan]  
-**Kontak:** [Email]
+## 📄 License
 
----
-
-© 2025 EmergencyyCall. All Rights Reserved.
+Private - All Rights Reserved
